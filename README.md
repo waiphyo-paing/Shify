@@ -1,6 +1,6 @@
 # Shify
 
-## EmployeeShift - Flexible Workforce Scheduling and Management System
+#### **EmployeeShift - Flexible Workforce Scheduling and Management System**
 
 EmployeeShift is a web-based platform designed to streamline workforce management by providing flexible scheduling, real-time communication, and financial transparency. The system empowers employees to manage their shifts, view earnings, and stay informed, while giving managers powerful tools for scheduling, shift management, and team coordination.
 
@@ -62,8 +62,6 @@ EmployeeShift/
 ```
 
 ---
-
-#### **License**
 
 ## License
 
