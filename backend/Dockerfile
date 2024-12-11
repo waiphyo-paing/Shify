@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copy package.json and install dependencies
 COPY package*.json ./
+RUN npm install nodemon
 RUN npm install
 
 # Copy all files into the container
@@ -15,4 +16,4 @@ COPY . .
 EXPOSE 5000
 
 # Start the Express server
-CMD ["node", "server.js"]
+CMD ["nodemon", "server.js"]

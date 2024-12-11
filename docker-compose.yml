@@ -6,8 +6,38 @@ services:
       context: ./frontend
     ports:
       - "3000:3000"
+    command: npm start
   backend:
     build:
       context: ./backend
     ports:
       - "5001:5000"
+    command: npm run dev
+    environment:
+      - POSTGRES_USER=shify
+      - POSTGRES_PASSWORD=wandev2002
+      - POSTGRES_DB=shify
+      - POSTGRES_HOST=postgres_db  # Or use 'localhost' for local connection
+      - POSTGRES_PORT=5432
+  postgres:
+    image: postgres:14
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: wandev2002
+      POSTGRES_DB: shify
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  mongo:
+    image: mongo
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  postgres_data: 
+  mongo_data:
